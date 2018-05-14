@@ -1,0 +1,14 @@
+{
+  "name": "garn",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^6.0.2",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  }
+}
