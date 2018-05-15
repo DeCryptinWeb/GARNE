@@ -9,10 +9,23 @@ class Messages extends Component {
     super(props)
 
     this.inputVal = React.createRef()
+    this.addNewMessageToStates = this.addNewMessageToStates.bind(this)
+  }
+
+  addNewMessageToStates () {
+    const {addNewMessageToState} = this.props
+
+    addNewMessageToState({variables: {
+      text: this.inputVal.current.value,
+      topic: 'Using Apollo',
+      type: 'user'
+    }})
+
+    this.inputVal.current.value = ''
   }
 
   render () {
-    const {data: {messagesState: {messages}}, addNewMessageToState} = this.props
+    const {data: {messagesState: {messages}}} = this.props
     const lastFiveMessages = messages.slice(1).slice(-5)
 
     return (
@@ -24,13 +37,7 @@ class Messages extends Component {
         </ul>
         <div>
           <input ref={this.inputVal} type='text' placeholder='write something' className={classes.input} />
-          <button onClick={() => {
-            addNewMessageToState({variables: {
-              text: this.inputVal.current.value,
-              topic: 'Using Apollo',
-              type: 'user'
-            }}); this.inputVal.current.value = ''
-          }} type='button' className={classes.button}>Send</button>
+          <button onClick={this.addNewMessageToStates} type='button' className={classes.button}>Send</button>
         </div>
       </div>
     )
