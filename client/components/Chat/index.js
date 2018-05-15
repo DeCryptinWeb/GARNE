@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {graphql, compose} from 'react-apollo'
 import {getMessagesState, addNewMessageToState} from './data.graphql'
 import Message from './Message'
+import classes from './styles.css'
 
 class Messages extends Component {
   constructor (props) {
@@ -11,43 +12,25 @@ class Messages extends Component {
   }
 
   render () {
-    const {data, data: {messagesState: {messages}}, addNewMessageToState} = this.props
+    const {data: {messagesState: {messages}}, addNewMessageToState} = this.props
     const lastFiveMessages = messages.slice(1).slice(-5)
 
     return (
-      <div style={{'max-width': '524px', float: 'left'}}>
-        <ul style={{
-          width: '500px',
-          'min-height': '200px',
-          background: '#ededed',
-          position: 'relative',
-          float: 'left',
-          padding: '12px',
-          fontFamily: 'cursive'
-        }}>
+      <div className={classes.container}>
+        <ul className={classes.list}>
           {lastFiveMessages.map((msg, index) => {
             return <Message key={index} text={msg.text} type={msg.type} />
           })}
         </ul>
-        <div style={{width: '100%'}}>
-          <input ref={this.inputVal} type='text' placeholder='write something' style={{
-            padding: '6px',
-            'border-radius': '6px 0 0 6px',
-            border: '1px solid #58aec7',
-            width: 'calc(100% - 60px)'
-          }} />
+        <div>
+          <input ref={this.inputVal} type='text' placeholder='write something' className={classes.input} />
           <button onClick={() => {
             addNewMessageToState({variables: {
               text: this.inputVal.current.value,
               topic: 'Using Apollo',
               type: 'user'
             }}); this.inputVal.current.value = ''
-          }} type='button' style={{
-            padding: '7px',
-            background: '#58aec7',
-            color: '#fff',
-            border: 'none'
-          }}>Send</button>
+          }} type='button' className={classes.button}>Send</button>
         </div>
       </div>
     )

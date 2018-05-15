@@ -1,14 +1,10 @@
-export default ({type, text}) => {
-  const floatValue = type === 'cc' ? 'left' : 'right'
-  const backgroundColor = type === 'cc' ? '#b9b9b9' : '#58aec7'
+import classes from './styles.css'
 
-  return <li style={{display: 'block', width: '100%', listStyleType: 'none', clear: 'both'}}><div style={{
-    float: floatValue,
-    maxWidth: '90%',
-    padding: '6px 12px',
-    margin: '5px 0',
-    background: backgroundColor,
-    borderRadius: '8px',
-    color: '#fff'
-  }}>{text}</div></li>
+export default ({type, text}) => {
+  const floatClass = type === 'cc' ? classes.left : classes.right
+  const backgroundColorClass = type === 'cc' ? classes.grey : classes.blue
+
+  return <li className={`${classes.li}`}>
+    <div className={`${classes.div} ${backgroundColorClass} ${floatClass}`}>{text}</div>
+  </li>
 }

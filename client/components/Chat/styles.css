@@ -1,0 +1,28 @@
+.container {
+    max-width: 524px;
+    float: left;
+}
+
+.list {
+    position: relative;
+    float: left;
+    padding: 12px;
+    width: 500px;
+    min-height: 200px;
+    background: #ededed;
+    font-Family: cursive;
+}
+
+.input {
+    padding: 6px;
+    border-radius: 6px 0 0 6px;
+    border: 1px solid #58aec7;
+    width: calc(100% - 60px);
+}
+
+.button {
+    padding: 7px;
+    background: #58aec7;
+    color: #fff;
+    border: none;
+}
