@@ -17,6 +17,7 @@
     "next-plugin-graphql": "^0.0.1",
     "react": "^16.3.2",
     "react-apollo": "^2.1.4",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.3.2",
+    "standard": "^11.0.1"
   }
 }
