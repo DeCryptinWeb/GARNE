@@ -4,7 +4,8 @@
         [ "module-resolver", {
             "root": ["./"],
             "alias": {
-                "@apollo": "./lib/@apollo"
+                "@apollo": "./lib/@apollo",
+                "@config": "./lib/@config"
             }
         }]
     ]

@@ -17,6 +17,8 @@
     "next": "^6.0.2",
     "next-apollo": "^1.0.13",
     "next-plugin-graphql": "^0.0.1",
+    "postcss-loader": "^2.1.5",
+    "postcss-simple-vars": "^4.1.0",
     "react": "^16.3.2",
     "react-apollo": "^2.1.4",
     "react-dom": "^16.3.2",
