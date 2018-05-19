@@ -1,5 +1,5 @@
 {
-  "name": "garn",
+  "name": "garne",
   "version": "0.0.1",
   "scripts": {
     "dev": "next",
@@ -14,7 +14,7 @@
     "apollo-link-state": "^0.4.1",
     "babel-plugin-module-resolver": "^3.1.1",
     "graphql-tag": "^2.9.2",
-    "next": "^6.0.2",
+    "next": "^6.0.3",
     "next-apollo": "^1.0.13",
     "next-plugin-graphql": "^0.0.1",
     "postcss-loader": "^2.1.5",
