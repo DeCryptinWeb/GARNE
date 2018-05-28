@@ -5,7 +5,8 @@
             "root": ["./"],
             "alias": {
                 "@apollo": "./lib/@apollo",
-                "@config": "./lib/@config"
+                "@config": "./lib/@config",
+                "@helper": "./lib/@helper"
             }
         }]
     ]

@@ -1,6 +1,7 @@
 .container {
     max-width: 524px;
     float: left;
+    z-index: zindex(chat);
 }
 
 .list {
