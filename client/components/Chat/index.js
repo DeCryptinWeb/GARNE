@@ -3,6 +3,7 @@ import {graphql, compose} from 'react-apollo'
 import {getMessagesState, addNewMessageToState} from './data.graphql'
 import Message from './Message'
 import classes from './styles.css'
+import Svg from '/lib/@helper/components/Svg'
 
 class Messages extends Component {
   constructor (props) {
@@ -30,6 +31,7 @@ class Messages extends Component {
 
     return (
       <div className={classes.container}>
+        <Svg name='message' />
         <ul className={classes.list}>
           {lastFiveMessages.map((msg, index) => {
             return <Message key={index} text={msg.text} type={msg.type} />

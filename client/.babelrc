@@ -8,6 +8,7 @@
                 "@config": "./lib/@config",
                 "@helper": "./lib/@helper"
             }
-        }]
+        }],
+        "inline-svg"
     ]
 }

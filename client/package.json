@@ -12,6 +12,7 @@
     "apollo-link": "^1.2.2",
     "apollo-link-http": "^1.5.4",
     "apollo-link-state": "^0.4.1",
+    "babel-plugin-inline-svg": "^1.0.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "graphql-tag": "^2.9.2",
     "next": "^6.0.3",
