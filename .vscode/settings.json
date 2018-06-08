@@ -1,4 +1,7 @@
 {
     "standard.enable": true,
-    "standard.autoFixOnSave": true
+    "standard.autoFixOnSave": true,
+    "files.associations": {
+        "*.css": "scss",
+    }
 }

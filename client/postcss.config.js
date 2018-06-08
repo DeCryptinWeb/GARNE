@@ -14,8 +14,7 @@ module.exports = {
     functions({functions: config_functions}),
     nested(),
     cssNext({
-      // Allow future CSS features to be used, also auto-prefixes the CSS...
-      browsers: ['> 1%', 'last 2 versions', 'not ie <= 10'] // ...based on this browser list
+      browsers: ['> 1%', 'last 2 versions', 'not ie <= 10']
     })
   ]
 }

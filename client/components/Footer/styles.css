@@ -1,0 +1,17 @@
+.footer {
+    position: relative;
+    width: 100%;
+    background-color: grey;
+}
+
+.footerContent {
+    padding: 12px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.reflect {
+    display: inline-block;
+    transform: scaleX(-1)
+}

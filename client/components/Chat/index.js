@@ -1,45 +1,24 @@
 import React, {Component} from 'react'
 import {graphql, compose} from 'react-apollo'
-import {getMessagesState, addNewMessageToState} from './data.graphql'
 import Message from './Message'
+import TextField from './TextField'
+import {getMessagesState} from './data.graphql'
 import classes from './styles.css'
-import Svg from '/lib/@helper/components/Svg'
 
 class Messages extends Component {
-  constructor (props) {
-    super(props)
-
-    this.inputVal = React.createRef()
-    this.addNewMessageToStates = this.addNewMessageToStates.bind(this)
-  }
-
-  addNewMessageToStates () {
-    const {addNewMessageToState} = this.props
-
-    addNewMessageToState({variables: {
-      text: this.inputVal.current.value,
-      topic: 'Using Apollo',
-      type: 'user'
-    }})
-
-    this.inputVal.current.value = ''
-  }
-
   render () {
     const {data: {messagesState: {messages}}} = this.props
-    const lastFiveMessages = messages.slice(1).slice(-5)
+    const lastFiveMessages = messages.slice(0).slice(-6)
 
     return (
-      <div className={classes.container}>
-        <Svg name='message' />
-        <ul className={classes.list}>
-          {lastFiveMessages.map((msg, index) => {
-            return <Message key={index} text={msg.text} type={msg.type} />
-          })}
-        </ul>
-        <div>
-          <input ref={this.inputVal} type='text' placeholder='write something' className={classes.input} />
-          <button onClick={this.addNewMessageToStates} type='button' className={classes.button}>Send</button>
+      <div className={classes.wrapper}>
+        <div className={classes.container}>
+          <ul className={classes.list}>
+            {lastFiveMessages.map((msg, index) => {
+              return <Message key={index} text={msg.text} type={msg.type} />
+            })}
+          </ul>
+          <TextField saveText={this.addNewMessageToStates} />
         </div>
       </div>
     )
@@ -47,6 +26,5 @@ class Messages extends Component {
 }
 
 export default compose(
-  graphql(getMessagesState),
-  graphql(addNewMessageToState, {name: 'addNewMessageToState'})
+  graphql(getMessagesState)
 )(Messages)

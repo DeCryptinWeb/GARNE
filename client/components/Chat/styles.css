@@ -1,29 +1,26 @@
-.container {
-    max-width: 524px;
-    float: left;
+.wrapper {
+    flex: 1;
+    background-image: url(/static/@images/lines.png);
     z-index: zindex(chat);
+}
+
+.container {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    padding:  0 12px;
+    max-width: 500px;
+    box-sizing: border-box;
 }
 
 .list {
     position: relative;
     float: left;
     padding: 12px;
-    width: 500px;
     min-height: 200px;
-    background: #ededed;
+    background: #edededb6;
+    border: 2px solid #d7d7d7;
+    border-radius: 8px;
     font-Family: cursive;
-}
-
-.input {
-    padding: 6px;
-    border-radius: 6px 0 0 6px;
-    border: 1px solid #58aec7;
-    width: calc(100% - 60px);
-}
-
-.button {
-    padding: 7px;
-    background: #58aec7;
-    color: #fff;
-    border: none;
 }

@@ -1,0 +1,4 @@
+# adding new Messages into client store
+mutation addNewMessageToState($text: String!, $type: String!, $topic: String!) {
+    addNewMessageToState(text: $text, type: $type, topic: $topic) @client
+}
