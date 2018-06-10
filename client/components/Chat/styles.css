@@ -18,9 +18,11 @@
     position: relative;
     float: left;
     padding: 12px;
+    width: 100%;
     min-height: 200px;
     background: #edededb6;
     border: 2px solid #d7d7d7;
     border-radius: 8px;
     font-Family: cursive;
+    box-sizing: border-box;
 }
