@@ -14,7 +14,6 @@ import messageResolvers from './resolvers/messages.js'
 
 // initializing the Apollo-cache to use it as local store
 const cache = new InMemoryCache()
-
 // defining default states
 const defaultState = messagesState
 
@@ -27,7 +26,7 @@ const stateLink = withClientState({
 
 // creating a terminating link with specific endpoint
 const terminatingLink = new HttpLink({
-  uri: 'https://launchpad.graphql.com/w5xlvm3vzz'
+  uri: 'http://localhost:4000/graphql'
 })
 
 // chaining links together

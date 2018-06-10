@@ -1,0 +1,6 @@
+query GetFooterData {
+  footerData{
+    footerLinkUrl
+	footerLinkName
+  }
+}

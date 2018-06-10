@@ -1,0 +1,8 @@
+type FooterData {
+    footerLinkName: String!
+    footerLinkUrl: String!
+}
+
+type Query {
+    footerData: FooterData
+}
