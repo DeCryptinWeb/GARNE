@@ -1,11 +1,10 @@
 import App, {Container} from 'next/app'
 import GlobalCss from '@helper/components/GlobalCss'
 import React from 'react'
-// importing withApollo HOC to wrap it around the Index-Component and provide the needed abilities
-import apolloClient from '@apollo/apolloClient.js'
+import withApollo from '@apollo/withApollo.js'
 import { ApolloProvider } from 'react-apollo'
 
-export default class MyApp extends App {
+class MyApp extends App {
   static async getInitialProps ({ Component, router, ctx }) {
     let pageProps = {}
 
@@ -17,7 +16,7 @@ export default class MyApp extends App {
   }
 
   render () {
-    const {Component, pageProps} = this.props
+    const {Component, pageProps, apolloClient} = this.props
     return <Container>
       <GlobalCss>
         <ApolloProvider client={apolloClient} >
@@ -27,3 +26,5 @@ export default class MyApp extends App {
     </Container>
   }
 }
+
+export default withApollo(MyApp)
