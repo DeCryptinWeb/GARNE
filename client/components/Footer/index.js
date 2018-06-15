@@ -11,6 +11,9 @@ export default class extends Component {
           GA<span className={classes.reflect}>R</span><span className={classes.reflect}>N</span>E -&nbsp;
           <Query query={GetFooterData} ssr>
             {({loading, error, data}) => {
+              if (loading) return 'Loading...'
+              if (error) return `Error! ${error.message}`
+
               const {footerData: {footerLinkName, footerLinkUrl}} = data
 
               return <a href={footerLinkUrl} target='blank'>{footerLinkName}</a>
