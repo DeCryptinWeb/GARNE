@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {getDataFromTree} from 'react-apollo'
+import {ApolloProvider, getDataFromTree} from 'react-apollo'
 import apolloclient from '@apollo/apolloClient'
 import logger from '@helper/logger'
 
@@ -10,10 +10,12 @@ export default (App) => class extends Component {
       // before rendering the view so the data is already
       // present when the view gets rendered
       await getDataFromTree(
-        <App
-          Component={Component}
-          apolloClient={apolloclient}
-        />
+        <ApolloProvider client={apolloclient}>
+          <App
+            Component={Component}
+            router={router}
+          />
+        </ApolloProvider>
       )
     } catch (error) {
       logger.error(error)
@@ -23,6 +25,8 @@ export default (App) => class extends Component {
   }
 
   render () {
-    return <App apolloClient={apolloclient} {...this.props} />
+    return <ApolloProvider client={apolloclient}>
+      <App apolloClient={apolloclient} {...this.props} />
+    </ApolloProvider>
   }
 }
