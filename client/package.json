@@ -18,7 +18,7 @@
     "graphql-tag": "^2.9.2",
     "isomorphic-unfetch": "^2.0.0",
     "next": "^6.0.3",
-    "next-apollo": "^1.0.13",
+    "next-apollo": "^2.0.0",
     "next-plugin-graphql": "^0.0.1",
     "postcss-cssnext": "^3.1.0",
     "postcss-functions": "^3.0.0",
@@ -26,8 +26,8 @@
     "postcss-mixins": "^6.2.0",
     "postcss-nested": "^3.0.0",
     "postcss-simple-vars": "^4.1.0",
-    "react": "^16.3.2",
-    "react-apollo": "^2.1.4",
+    "react": "^16.5.0",
+    "react-apollo": "^2.1.11",
     "react-dom": "^16.3.2",
     "standard": "^11.0.1"
   }
